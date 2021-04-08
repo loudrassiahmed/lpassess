@@ -1,0 +1,29 @@
+<template>
+    <template if:true={consentsWrapper}>
+        <lightning-card title={labels.manageConsentsTitle}>
+            <div class="slds-grid slds-wrap">
+                <template for:each={consentsWrapper.consentItems} for:item="field" for:index="index">
+                    <div class="slds-col slds-size_1-of-1 slds-p-around_x-medium" key={field}>
+                        <div class="slds-p-horizontal_small">
+                            <lightning-input type="toggle" data-index={index} label={field.fieldLabel}
+                                name={field.fieldName} variant="label-stacked" checked={field.fieldValue}
+                                onchange={handleChangeItem} message-toggle-inactive={labels.optOut}
+                                message-toggle-active={labels.optIn}>
+                            </lightning-input>
+                        </div>
+                    </div>
+                </template>
+            </div>
+            <div class="slds-grid slds-wrap">
+                <div class="slds-size_3-of-6 slds-p-around_xx-small">
+                    <lightning-button label={labels.saveButton} onclick={handleSaveClick} variant="brand" type="submit"
+                        class="slds-float_right"></lightning-button>
+                </div>
+            </div>
+            <template if:true={isLoading}>
+                <lightning-spinner size="large" alternative-text="Loading"></lightning-spinner>
+            </template>
+        </lightning-card>
+    </template>
+
+</template>
