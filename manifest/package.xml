@@ -29,6 +29,10 @@
         <name>LightningComponentBundle</name>
     </types>
     <types>
+        <members>ConsentManagementSetting__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
         <members>Contact.CommercialEmailConsent__c</members>
         <members>Contact.CommercialPhoneConsent__c</members>
         <members>Contact.MarketingEmailConsent__c</members>
